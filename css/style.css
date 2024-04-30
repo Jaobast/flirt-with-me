@@ -81,10 +81,29 @@ button{
 
 
 
-@media (max-width: 800px) {
+@media (max-width: 1200px) {
+    .message .message-avatar, .user-message .message-avatar, .message, button{
+        font-size: 35px;
+    }
+
+    .chat-content{
+        margin: 0;
+        width: 96%;
+    }
+
+    button{
+        padding: 15px 30px;
+    }
+    
+
+} 
+@media (min-width: 1200px) {
     button:hover{
         background-color: white;
         color: dodgerblue;
+    }
+    body{
+        background-color: red;
     }
     
 } 
