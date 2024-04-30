@@ -8,8 +8,17 @@ html, body{
 }
   
 .chat-header{
-
     color: salmon;
+    position: sticky;
+    bottom: 80vh;
+}
+
+.container{
+    overflow: auto;
+    display: flex;
+    flex-direction: column-reverse;
+    height: 80vh;
+    overflow-anchor: auto !important;
 }
 
 .chat-content{
@@ -19,9 +28,7 @@ html, body{
     display: flex;
     flex-direction: column;
     width: 80%;
-    height: 72vh;
-    scroll-behavior: smooth;
-    overflow-anchor: auto !important;
+    transform: translateZ(0);
 }
   
 .message{
@@ -117,9 +124,6 @@ button{
     button:hover{
         background-color: white;
         color: dodgerblue;
-    }
-    body{
-        background-color: red;
     }
     
 } 
