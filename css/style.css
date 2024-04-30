@@ -1,6 +1,10 @@
+html{
+    height: -webkit-fill-available;
+    max-height: 100vh; 
+}
 body{
     height: -webkit-fill-available;
-    height: 100vh; 
+    max-height: 100vh; 
     font-family: sans-serif;
     margin: 0;
 }
@@ -8,14 +12,13 @@ body{
 .chat-header{
     color: salmon;
     position: sticky;
-    bottom: 80vh;
 }
 
 .container{
     overflow: auto;
     display: flex;
     flex-direction: column-reverse;
-    height: 73vh;
+    height: 68vh;
     overflow-anchor: auto !important;
 }
 
