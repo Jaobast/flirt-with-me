@@ -2,6 +2,9 @@ html, body{
     font-family: sans-serif;
     margin: 0;
     height: 100%;
+    margin-bottom: 2vh;
+    height: -webkit-fill-available;
+    height: 100vh;
 }
   
 .chat-header{
@@ -11,11 +14,12 @@ html, body{
 
 .chat-content{
     margin: auto;
-    overflow-y: auto;
+    overflow: auto;
     padding: 12px 20px;
     display: flex;
     flex-direction: column;
     width: 80%;
+    height: 72vh;
     scroll-behavior: smooth;
     overflow-anchor: auto !important;
 }
@@ -86,7 +90,7 @@ button{
 @media (max-width: 1200px) {
     .message .message-avatar, .user-message .message-avatar, .message, button{
         font-size: 35px;
-        overflow-anchor: none;
+        transform: translateZ(0);
     }
 
     .chat-content{
