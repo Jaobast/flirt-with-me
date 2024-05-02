@@ -36,31 +36,34 @@ setTimeout (function(){showNextMessage("Erlaubst du mir, mit dir zu flirten? �
 
 setTimeout (function(){flirtButton.style.display = "inline";}, 5000);
 
+
+
 function geschlecht(){
-    appendUserMessage("du darfst ja mich anmachen");
+  setTimeout (function(){appendUserMessage("ja klar!");}, 0);
+  setTimeout (function(){appendUserMessage("du darfst mich anmachen");}, 1000);
+  
 
-    setTimeout (function(){showNextMessage("Bevor ich mein Verführungsspiel beginne, könntest du mir verraten, welches Geschlecht du bevorzugst?", 2000);}, 500);
-    setTimeout(function() {
-        document.getElementById("geschlecht").classList.add("hidden");
-
-        const div = document.querySelector(".user-input");
+  setTimeout (function(){showNextMessage("Bevor ich mein Verführungsspiel beginne, könntest du mir verraten, welches Geschlecht du für dich bevorzugst?", 2000);}, 3000);
+  setTimeout(function() {
+    document.getElementById("geschlecht").classList.add("hidden");
+    const div = document.querySelector(".user-input");
         
-        const btnfrau = document.createElement("button");
-        div.appendChild(btnfrau);
-        btnfrau.innerHTML = "weiblich";
+    const btnfrau = document.createElement("button");
+    div.appendChild(btnfrau);
+    btnfrau.innerHTML = "weiblich";
 
-        const btnmann = document.createElement("button");
-        div.appendChild(btnmann);
-        btnmann.innerHTML = "männlich";
+    const btnmann = document.createElement("button");
+    div.appendChild(btnmann);
+    btnmann.innerHTML = "männlich";
 
-        const btndivers = document.createElement("button");
-        div.appendChild(btndivers);
-        btndivers.innerHTML = "divers";
+    const btndivers = document.createElement("button");
+    div.appendChild(btndivers);
+    btndivers.innerHTML = "divers";
 
-        btnfrau.addEventListener("click", flirtfrau);
-        btnmann.addEventListener("click", flirtmann);
-        btnnon.addEventListener("click", flirtdivers);
-    }, 3500);
+    btnfrau.addEventListener("click", flirtfrau);
+    btnmann.addEventListener("click", flirtmann);
+    btnnon.addEventListener("click", flirtdivers);
+    }, 6000);
 
     flirtButton.style.display = "none";
 }
@@ -93,22 +96,3 @@ function removeButtons(){
 }
 
 const flirtButton = document.querySelector(".hidden");
-
-/* function flirtfrauRomBot(){
-    appendUserMessage();
-  
-    if(jokeIndex >= jokes.length){
-      setTimeout(function() {appendBotMessage("Entschuldigung, aber ich habe momentan keine Witze mehr!");}, 1000);
-      return;
-    }
-  
-    setTimeout(function() {appendBotMessage(firstMessage[firstMessageIndex]);}, 1000);
-    setTimeout(function() {appendBotMessage(flirt[flirtIndex][0]);}, 1500);
-    setTimeout(function() {
-      appendBotMessage(flirt[flirtIndex][1]);
-      flirtButton.style.display = "inline";
-      flirtIndex++;
-      firstMessageIndex++;}, 5000);
-  
-    flirtButton.style.display = "none";
-  } */

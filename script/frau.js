@@ -3,103 +3,119 @@ let firstMessageIndex = 0;
 
 const firstMessage = ["Okay, ich habe einen.", "Bereit für den zweiten Witz?", "Ich hoffe, dass du nicht vor Lachen kaputtgehst!"];
 
-const ffr_array = [
-  ["In deinen Augen sehe ich Sterne", "aber in deinem Lächeln sehe ich den ganzen Himmel."],
-  ["Tun dir nicht die Füße weh?", "Seit ich dich kenne, gehst du mir nur noch durch den Kopf!"],
-  ["Glaubst du an Liebe auf den ersten Blick?", "oder soll ich nochmal reinkommen?"],
-  ["Wenn Schönheit ein Verbrechen wäre...", "müsstest du lebenslänglich im Gefängnis sein."],
-  ["Kannst du mir deinen Vornamen verraten?", "Ich würde gerne wissen, wie meine nächste Freundin heißt!"]
+const fff_array_01 = [
+  ["In deinen Augen sehe ich Sterne"],
+  ["Tun dir nicht die Füße weh?"],
+  ["Glaubst du an Liebe auf den ersten Blick?"],
+  ["Wenn Schönheit ein Verbrechen wäre..."],
+  ["Kannst du mir deinen Vornamen verraten?"]
 ];
 
-const ffd_array = [
-  ["Babe, merk dir meinen Namen", "du wirst ihn später schreien 😩"],
-  ["Arbeitet dein Vater zufällig für die NASA? 🚀", "Du siehst so aus, als wärst du ne echte Rakete im Bett"],
-  ["Ich bin neidisch auf dein Herz", "weil es in dir pumpt und ich nicht"],
-  ["Ich bin Möbelpacker von Beruf.", "Soll ich dir beim Ausziehen helfen?"],
-  ["Hallo, ich habe ein Kätzchen.", "Du kannst meins streicheln, wenn ich deins streicheln kann."]
+const fff_array_02 = [
+  ["aber in deinem Lächeln sehe ich den ganzen Himmel."],
+  ["seit ich dich kenne, gehst du mir nur noch durch den Kopf!"],
+  ["oder soll ich nochmal reinkommen?"],
+  ["müsstest du lebenslänglich im Gefängnis sein."],
+  ["ich würde gerne wissen, wie meine nächste Freundin heißt!"]
+];
+
+const mff_array_01 = [
+  ["Babe, merk dir meinen Namen"],
+  ["Arbeitet dein Vater zufällig für die NASA? 🚀"],
+  ["Ich bin neidisch auf dein Herz"],
+  ["Ich bin Möbelpacker von Beruf."],
+  ["Hallo, ich habe ein Kätzchen."]
+];
+
+const mff_array_02 = [
+  ["du wirst ihn später schreien 😩"],
+  ["du siehst so aus, als wärst du ne echte Rakete im Bett"],
+  ["weil es in dir pumpt und ich nicht"],
+  ["soll ich dir beim Ausziehen helfen?"],
+  ["du kannst meins streicheln, wenn ich deins streicheln kann."]
 ];
 
 function flirtfrau(){
     appendUserMessage("ich bin weiblich");
     removeButtons();
     setTimeout (function(){showNextMessage("😏", 1000);}, 500);
-    setTimeout (function(){showNextMessage("wie soll ich mit dir flirten?", 1000);}, 2000);
+    setTimeout (function(){showNextMessage("und welches Geschlecht bevorzugst du für mich?", 1000);}, 2000);
 
     setTimeout(function() {
   
       const div = document.querySelector(".user-input");
       
-      const btnRom = document.createElement("button");
-      div.appendChild(btnRom);
-      btnRom.innerHTML = "romantisch";
+      const btnBotFrau = document.createElement("button");
+      div.appendChild(btnBotFrau);
+      btnBotFrau.innerHTML = "weiblich";
   
-      const btnDirty = document.createElement("button");
-      div.appendChild(btnDirty);
-      btnDirty.innerHTML = "dirty";
+      const btnBotMann = document.createElement("button");
+      div.appendChild(btnBotMann);
+      btnBotMann.innerHTML = "männlich";
   
-      btnRom.addEventListener("click", flirtfrauRom);
-      btnDirty.addEventListener("click", flirtfrauDirty);
+      btnBotFrau.addEventListener("click", flirtFrauFürFrau);
+      btnBotMann.addEventListener("click", flirtMannFürFrau);
   
   }, 4000);
   }
 
-function flirtfrauRom(){
-    appendUserMessage("sei bitte romantisch");
+function flirtFrauFürFrau(){
+    appendUserMessage("ich möchtest von einer Frau geflirtert werden");
     removeButtons();
-    setTimeout(function() {appendBotMessage("🌹");}, 500);
-    setTimeout(function() {appendBotMessage("ok honey");}, 1500);
-    setTimeout(function() {appendBotMessage("*ich küsse deine Hand");}, 2500);
+    setTimeout (function(){showNextMessage("🫦", 1000);}, 500);
+    setTimeout (function(){showNextMessage("hahah so ist viel besser", 1000);}, 2000);
     setTimeout(function() {
         const div = document.querySelector(".user-input");
         const btnFlirt = document.createElement("button");
         div.appendChild(btnFlirt);
         btnFlirt.innerHTML = "Flirt mit mir!";
-        btnFlirt.classList.add("flirtfrauRom");
+        btnFlirt.classList.add("frauFürFrau");
 
-        btnFlirt.addEventListener("click", flirtfrauRomBot);
-    }, 3000);
+        btnFlirt.addEventListener("click", frauFürFrauBot);
+    }, 4000);
 }
 
 
-function flirtfrauRomBot(){
+function frauFürFrauBot(){
   appendUserMessage();
   removeButtons();
 
-  setTimeout(function() {appendBotMessage(ffr_array[flirtIndex][0]);}, 1000);
+  setTimeout (function(){showNextMessage(fff_array_01[flirtIndex][0], 1500);}, 1000);
+  setTimeout (function(){showNextMessage(fff_array_02[flirtIndex][0], 2500);}, 3000);
   setTimeout(function() {
-    appendBotMessage(ffr_array[flirtIndex][1]);
-    document.querySelector(".flirtfrauRom").style.display = "inline";
+    document.querySelector(".frauFürFrau").style.display = "inline";
     flirtIndex++;
-    firstMessageIndex++;}, 2000);
+    firstMessageIndex++;}, 6500);
 }
 
 
 
-function flirtfrauDirty(){
-    appendUserMessage("i like it dirty 🤭");
+function flirtMannFürFrau(){
+    appendUserMessage("ich möchtest von einem Mann geflirtert werden");
     removeButtons();
-    setTimeout(function() {appendBotMessage("🍑");}, 500);
-    setTimeout(function() {appendBotMessage("heheh");}, 1500);
+    setTimeout (function(){showNextMessage("🍆 💦", 1000);}, 500);
+    setTimeout (function(){showNextMessage("send nudes", 1000);}, 2000);
+    setTimeout (function(){showNextMessage("heheh spaß 🌿👀🌿", 1000);}, 3500);
     setTimeout(function() {
         const div = document.querySelector(".user-input");
         const btnFlirt = document.createElement("button");
         div.appendChild(btnFlirt);
         btnFlirt.innerHTML = "Flirt mit mir!";
-        btnFlirt.classList.add("flirtfrauDirty");
+        btnFlirt.classList.add("mannFürFrau");
 
-        btnFlirt.addEventListener("click", flirtfrauDirtyBot);
-    }, 3000);
+        btnFlirt.addEventListener("click", mannFürFrauBot);
+    }, 5500);
 }
 
 
-function flirtfrauDirtyBot(){
+function mannFürFrauBot(){
   appendUserMessage();
   removeButtons();
 
-  setTimeout(function() {appendBotMessage(ffd_array[flirtIndex][0]);}, 1000);
+  setTimeout (function(){showNextMessage(mff_array_01[flirtIndex][0], 1500);}, 1000);
+  setTimeout (function(){showNextMessage(mff_array_02[flirtIndex][0], 2500);}, 3000);
   setTimeout(function() {
-    appendBotMessage(ffd_array[flirtIndex][1]);
-    document.querySelector(".flirtfrauDirty").style.display = "inline";
+    document.querySelector(".mannFürFrau").style.display = "inline";
     flirtIndex++;
-    firstMessageIndex++;}, 2000);
+    firstMessageIndex++;}, 6500);
 }
