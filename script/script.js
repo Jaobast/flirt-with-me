@@ -17,11 +17,11 @@ function appendBotMessage(messageText){
 
 setTimeout(function() {flirtButton.style.display = "none";},0);
 setTimeout(function() {appendBotMessage("...");setTimeout(function() {document.querySelector(".bot-message:last-of-type").remove();}, 1000);}, 0);
-setTimeout(function() {appendBotMessage("hey!");}, 1010);
+setTimeout(function() {appendBotMessage("hey!");}, 1005);
 setTimeout(function() {appendBotMessage("...");setTimeout(function() {document.querySelector(".bot-message:last-of-type").remove();}, 1500);}, 1500);
-setTimeout(function() {appendBotMessage("ich bin der Flirt-Bot und ich bin hier, um dein Herz zu erobern.");}, 3010);
+setTimeout(function() {appendBotMessage("ich bin der Flirt-Bot und ich bin hier, um dein Herz zu erobern.");}, 3005);
 setTimeout(function() {appendBotMessage("...");setTimeout(function() {document.querySelector(".bot-message:last-of-type").remove();}, 1000);}, 3500);
-setTimeout(function() {appendBotMessage("erlaubst du mich mit dir zu firten? 😏");}, 4510);
+setTimeout(function() {appendBotMessage("erlaubst du mich mit dir zu firten? 😏");}, 4505);
 setTimeout(function() {flirtButton.style.display = "inline";}, 5000);
 
 function geschlecht(){
