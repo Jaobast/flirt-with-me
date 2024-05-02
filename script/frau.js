@@ -22,9 +22,11 @@ const ffd_array = [
 function flirtfrau(){
     appendUserMessage("ich bin weiblich");
     removeButtons();
-  
-    setTimeout(function() {appendBotMessage("😏");}, 500);
-    setTimeout(function() {appendBotMessage("wie soll ich mit dir flirten?");}, 1500);
+    setTimeout(function() {appendBotMessage("...");setTimeout(function() {document.querySelector(".bot-message:last-of-type").remove();}, 1000);}, 500);
+    setTimeout(function() {appendBotMessage("😏");}, 1510);
+
+    setTimeout(function() {appendBotMessage("...");setTimeout(function() {document.querySelector(".bot-message:last-of-type").remove();}, 1500);}, 2000);
+    setTimeout(function() {appendBotMessage("wie soll ich mit dir flirten?");}, 3510);
     setTimeout(function() {
   
       const div = document.querySelector(".user-input");
@@ -40,7 +42,7 @@ function flirtfrau(){
       btnRom.addEventListener("click", flirtfrauRom);
       btnDirty.addEventListener("click", flirtfrauDirty);
   
-  }, 2000);
+  }, 4000);
   }
 
 function flirtfrauRom(){

@@ -16,16 +16,19 @@ function appendBotMessage(messageText){
 }
 
 setTimeout(function() {flirtButton.style.display = "none";},0);
-setTimeout(function() {appendBotMessage("hey!");}, 500);
-setTimeout(function() {appendBotMessage("Ich bin der Flirt-Bot und ich bin hier, um dein Herz zu erobern.");}, 1500);
-setTimeout(function() {appendBotMessage("Lass mich ein charmantes Kompliment für dich finden, das dir ein Lächeln ins Gesicht zaubert.");}, 2500);
-setTimeout(function() {flirtButton.style.display = "inline";}, 3000);
-
-
+setTimeout(function() {appendBotMessage("...");setTimeout(function() {document.querySelector(".bot-message:last-of-type").remove();}, 1000);}, 0);
+setTimeout(function() {appendBotMessage("hey!");}, 1010);
+setTimeout(function() {appendBotMessage("...");setTimeout(function() {document.querySelector(".bot-message:last-of-type").remove();}, 1500);}, 1500);
+setTimeout(function() {appendBotMessage("ich bin der Flirt-Bot und ich bin hier, um dein Herz zu erobern.");}, 3010);
+setTimeout(function() {appendBotMessage("...");setTimeout(function() {document.querySelector(".bot-message:last-of-type").remove();}, 1000);}, 3500);
+setTimeout(function() {appendBotMessage("erlaubst du mich mit dir zu firten? 😏");}, 4510);
+setTimeout(function() {flirtButton.style.display = "inline";}, 5000);
 
 function geschlecht(){
-    appendUserMessage();
-    setTimeout(function() {appendBotMessage("Bevor ich mein Verführungsspiel beginne, könntest du mir verraten, welches Geschlecht du bevorzugst?");}, 1000);
+    appendUserMessage("du darfst ja mich anmachen");
+
+    setTimeout(function() {appendBotMessage("...");setTimeout(function() {document.querySelector(".bot-message:last-of-type").remove();}, 2000);}, 500);
+    setTimeout(function() {appendBotMessage("Bevor ich mein Verführungsspiel beginne, könntest du mir verraten, welches Geschlecht du bevorzugst?");}, 2510);
     setTimeout(function() {
         document.getElementById("geschlecht").classList.add("hidden");
 
@@ -39,19 +42,14 @@ function geschlecht(){
         div.appendChild(btnmann);
         btnmann.innerHTML = "männlich";
 
-        const btnnon = document.createElement("button");
-        div.appendChild(btnnon);
-        btnnon.innerHTML = "non-binäry";
-
-        const btnegal = document.createElement("button");
-        div.appendChild(btnegal);
-        btnegal.innerHTML = "egal";
+        const btndivers = document.createElement("button");
+        div.appendChild(btndivers);
+        btndivers.innerHTML = "divers";
 
         btnfrau.addEventListener("click", flirtfrau);
         btnmann.addEventListener("click", flirtmann);
-        btnnon.addEventListener("click", flirtnon);
-        btnegal.addEventListener("click", flirtegal);
-    }, 2000);
+        btnnon.addEventListener("click", flirtdivers);
+    }, 3000);
 
     flirtButton.style.display = "none";
 }
@@ -84,7 +82,6 @@ function removeButtons(){
 }
 
 const flirtButton = document.querySelector(".hidden");
-
 
 /* function flirtfrauRomBot(){
     appendUserMessage();
