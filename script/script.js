@@ -1,6 +1,6 @@
 const chatContent = document.querySelector(".chat-content");
 
-function appendBotMessage(messageText){
+function appendBotMessage(messageText) {
   const messageDiv = document.createElement("div");
   messageDiv.className = "message bot-message";
   chatContent.appendChild(messageDiv);
@@ -13,22 +13,33 @@ function appendBotMessage(messageText){
   contentDiv.className = "message-content";
   contentDiv.textContent = messageText;
   messageDiv.appendChild(contentDiv);
+
+  return messageDiv;
 }
 
-setTimeout(function() {flirtButton.style.display = "none";},0);
-setTimeout(function() {appendBotMessage("...");setTimeout(function() {document.querySelector(".bot-message:last-of-type").remove();}, 1000);}, 0);
-setTimeout(function() {appendBotMessage("hey!");}, 1005);
-setTimeout(function() {appendBotMessage("...");setTimeout(function() {document.querySelector(".bot-message:last-of-type").remove();}, 1500);}, 1500);
-setTimeout(function() {appendBotMessage("ich bin der Flirt-Bot und ich bin hier, um dein Herz zu erobern.");}, 3005);
-setTimeout(function() {appendBotMessage("...");setTimeout(function() {document.querySelector(".bot-message:last-of-type").remove();}, 1000);}, 3500);
-setTimeout(function() {appendBotMessage("erlaubst du mich mit dir zu firten? 😏");}, 4505);
-setTimeout(function() {flirtButton.style.display = "inline";}, 5000);
+function removeMessage(messageDiv) {
+  messageDiv.remove();
+}
+
+function showNextMessage(messageText, delay) {
+  const messageDiv = appendBotMessage("...");
+  setTimeout(function() {
+    removeMessage(messageDiv);
+    appendBotMessage(messageText); 
+  }, delay);
+}
+
+setTimeout (function(){flirtButton.style.display = "none";}, 0);
+setTimeout (function(){showNextMessage("Hey!", 500);}, 0);
+setTimeout (function(){showNextMessage("Ich bin der Flirt-Bot und ich bin hier, um dein Herz zu erobern.", 1000);}, 1000);
+setTimeout (function(){showNextMessage("Erlaubst du mir, mit dir zu flirten? 😏", 1000);}, 3000);
+
+setTimeout (function(){flirtButton.style.display = "inline";}, 5000);
 
 function geschlecht(){
     appendUserMessage("du darfst ja mich anmachen");
 
-    setTimeout(function() {appendBotMessage("...");setTimeout(function() {document.querySelector(".bot-message:last-of-type").remove();}, 2000);}, 500);
-    setTimeout(function() {appendBotMessage("Bevor ich mein Verführungsspiel beginne, könntest du mir verraten, welches Geschlecht du bevorzugst?");}, 2510);
+    setTimeout (function(){showNextMessage("Bevor ich mein Verführungsspiel beginne, könntest du mir verraten, welches Geschlecht du bevorzugst?", 2000);}, 500);
     setTimeout(function() {
         document.getElementById("geschlecht").classList.add("hidden");
 
@@ -49,7 +60,7 @@ function geschlecht(){
         btnfrau.addEventListener("click", flirtfrau);
         btnmann.addEventListener("click", flirtmann);
         btnnon.addEventListener("click", flirtdivers);
-    }, 3000);
+    }, 3500);
 
     flirtButton.style.display = "none";
 }
