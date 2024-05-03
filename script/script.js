@@ -13,9 +13,7 @@ setTimeout (function(){
   btnNein.innerHTML = "Nop";
 
   btnJa.addEventListener("click", geschlecht);
-  btnJa.classList.add("yes");
   btnNein.addEventListener("click", noFlirt);
-  btnNein.classList.add("nop");
 }, 5000);
 
 
@@ -27,8 +25,23 @@ function noFlirt(){
   setTimeout (function(){showNextImg("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDM4M210NDUwazNyZzlpZ3RhM296dmZ2aG1jN3gzZWkycTBrb2pwMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/RiEqMWo9BXzkBAuAhh/giphy.gif", 2000);}, 4000);
   setTimeout (function(){showNextMessage("excuse me?", 1000);}, 7000);
   setTimeout (function(){showNextMessage("ich frage nochmal", 1500);}, 9000);
-  setTimeout (function(){showNextMessage("und jetzt bekommst du nur eine Auswahl", 1500);}, 11500);
+  setTimeout (function(){showNextMessage("und du bekommst wieder zwei Auswahl", 1500);}, 11500);
   setTimeout (function(){showNextMessage("😇", 500);}, 13500);
+  setTimeout (function(){showNextMessage("Erlaubst du mir, mit dir zu flirten? 🙃", 2000);}, 15000);
+setTimeout (function(){
+  const div = document.querySelector(".user-input");
+        
+  const btnJa = document.createElement("button");
+  div.appendChild(btnJa);
+  btnJa.innerHTML = "Yes!!";
+
+  const btnKlar = document.createElement("button");
+  div.appendChild(btnKlar);
+  btnKlar.innerHTML = "klaro!!";
+
+  btnJa.addEventListener("click", geschlecht);
+  btnKlar.addEventListener("click", geschlecht);
+}, 18000);
 }
 
 
