@@ -91,6 +91,10 @@ button{
     margin: 10px 5px;
 } 
 
+.img-content img{
+    border-radius: 20px;
+}
+
 
 
 
@@ -116,6 +120,11 @@ button{
 
     .chat-header{
         padding: 1px;
+    }
+
+    .img-content img{
+        width: 50vw;
+        height: auto;
     }
 
 } 

@@ -1,51 +1,44 @@
-const chatContent = document.querySelector(".chat-content");
-
-function appendBotMessage(messageText) {
-  const messageDiv = document.createElement("div");
-  messageDiv.className = "message bot-message";
-  chatContent.appendChild(messageDiv);
-
-  const avatar = document.createElement("div");
-  avatar.className = "fas fa-robot message-avatar";
-  messageDiv.appendChild(avatar);
-
-  const contentDiv = document.createElement("div");
-  contentDiv.className = "message-content";
-  contentDiv.textContent = messageText;
-  messageDiv.appendChild(contentDiv);
-
-  return messageDiv;
-}
-
-function removeMessage(messageDiv) {
-  messageDiv.remove();
-}
-
-function showNextMessage(messageText, delay) {
-  const messageDiv = appendBotMessage("...");
-  setTimeout(function() {
-    removeMessage(messageDiv);
-    appendBotMessage(messageText); 
-  }, delay);
-}
-
-setTimeout (function(){flirtButton.style.display = "none";}, 0);
 setTimeout (function(){showNextMessage("Hey!", 500);}, 0);
 setTimeout (function(){showNextMessage("Ich bin der Flirt-Bot und ich bin hier, um dein Herz zu erobern.", 1000);}, 1000);
 setTimeout (function(){showNextMessage("Erlaubst du mir, mit dir zu flirten? 😏", 1000);}, 3000);
+setTimeout (function(){
+  const div = document.querySelector(".user-input");
+        
+  const btnJa = document.createElement("button");
+  div.appendChild(btnJa);
+  btnJa.innerHTML = "Yes";
 
-setTimeout (function(){flirtButton.style.display = "inline";}, 5000);
+  const btnNein = document.createElement("button");
+  div.appendChild(btnNein);
+  btnNein.innerHTML = "Nop";
+
+  btnJa.addEventListener("click", geschlecht);
+  btnJa.classList.add("yes");
+  btnNein.addEventListener("click", noFlirt);
+  btnNein.classList.add("nop");
+}, 5000);
+
+
+function noFlirt(){
+  removeButtons();
+  setTimeout(function(){appendUserMessage("Nope!");}, 0);
+  setTimeout(function(){appendUserMessage("ich bin mir nicht sicher");}, 1000);
+  setTimeout(function(){appendUserImg("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGx0ZzV2am4xaXJ0eDYzaGY0aTV3N3ByOGk3bWVpMjFmaW1wY3ZsYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/L2Ts72zLIcTWujzCxk/giphy.gif");}, 2000);
+  setTimeout (function(){showNextImg("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDM4M210NDUwazNyZzlpZ3RhM296dmZ2aG1jN3gzZWkycTBrb2pwMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/RiEqMWo9BXzkBAuAhh/giphy.gif", 2000);}, 3000);
+  setTimeout (function(){showNextMessage("Excuse me?", 1000);}, 6000);
+}
+
 
 
 
 function geschlecht(){
+  removeButtons();
   setTimeout (function(){appendUserMessage("ja klar!");}, 0);
   setTimeout (function(){appendUserMessage("du darfst mich anmachen");}, 1000);
   
 
   setTimeout (function(){showNextMessage("Bevor ich mein Verführungsspiel beginne, könntest du mir verraten, welches Geschlecht du für dich bevorzugst?", 2000);}, 3000);
   setTimeout(function() {
-    document.getElementById("geschlecht").classList.add("hidden");
     const div = document.querySelector(".user-input");
         
     const btnfrau = document.createElement("button");
@@ -64,35 +57,4 @@ function geschlecht(){
     btnmann.addEventListener("click", flirtmann);
     btnnon.addEventListener("click", flirtdivers);
     }, 6000);
-
-    flirtButton.style.display = "none";
 }
-
-
-
-function appendUserMessage(message){
-  const messageDiv = document.createElement("div");
-  messageDiv.className = "message user-message";
-  chatContent.appendChild(messageDiv);
-
-  const avatar = document.createElement("div");
-  avatar.className = "fas fa-smile message-avatar";
-  messageDiv.appendChild(avatar);
-
-  const contentDiv = document.createElement("div");
-  contentDiv.className = "message-content";
-  if(message){
-    contentDiv.textContent = message;
-  } else {
-    contentDiv.textContent = "Flirt with me!";
-  }
-  messageDiv.appendChild(contentDiv);
-}
-
-function removeButtons(){
-    document.querySelectorAll("button").forEach(button => {
-        button.style.display = "none";
-      });
-}
-
-const flirtButton = document.querySelector(".hidden");
