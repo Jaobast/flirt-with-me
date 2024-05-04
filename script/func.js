@@ -18,6 +18,8 @@ function appendBotMessage(messageText) {
     messageDiv.classList.add("bot-naughty");
   }else if(body.classList.contains("body-funny")){
     messageDiv.classList.add("bot-funny");
+  }else if(body.classList.contains("body-romantic")){
+    messageDiv.classList.add("bot-romantic");
   }
 
   chatContent.appendChild(messageDiv);
@@ -86,6 +88,8 @@ function appendUserMessage(message) {
     messageDiv.classList.add("user-naughty");
   }else if(body.classList.contains("body-funny")){
     messageDiv.classList.add("user-funny");
+  }else if(body.classList.contains("body-romantic")){
+    messageDiv.classList.add("user-romantic");
   }
 
   chatContent.appendChild(messageDiv);

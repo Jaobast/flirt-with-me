@@ -143,7 +143,7 @@ function FlirtNaughty(){
   botMessages.forEach(message => {
     message.classList.add("bot-naughty");
   });
-}, 500);
+}, 1000);
 
   setTimeout(function(){appendUserMessage("TESTE");}, 4000);
 }
@@ -162,7 +162,26 @@ function FlirtFunny(){
     botMessages.forEach(message => {
       message.classList.add("bot-funny");
     });
-  }, 500);
+  }, 1000);
+
+  setTimeout(function(){appendUserMessage("TESTE");}, 4000);
+}
+
+function FlirtRomantic(){
+  removeButtons();
+  const body = document.body;
+  body.classList.add("body-romantic");
+  setTimeout(function(){
+    const userMessages = document.querySelectorAll(".user-message");
+    userMessages.forEach(message => {
+      message.classList.add("user-romantic");
+    });
+  
+    const botMessages = document.querySelectorAll(".bot-message");
+    botMessages.forEach(message => {
+      message.classList.add("bot-romantic");
+    });
+  }, 1000);
 
   setTimeout(function(){appendUserMessage("TESTE");}, 4000);
 }
