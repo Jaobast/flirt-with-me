@@ -68,6 +68,7 @@ function geschlecht(){
     const btndivers = document.createElement("button");
     div.appendChild(btndivers);
     btndivers.innerHTML = "divers";
+    btndivers.classList.add("disabled");
 
     btnfrau.addEventListener("click", flirtFrau);
     btnmann.addEventListener("click", flirtMann);

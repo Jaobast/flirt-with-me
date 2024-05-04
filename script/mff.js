@@ -75,24 +75,6 @@ function mffBot(){
     }, 6500);
   } else {
     setTimeout(function() {showNextMessageMann("wie magst du den Flirt?", 1000);}, 1000);
-    setTimeout(function() {
-      const div = document.querySelector(".user-input");
-          
-      const btnFunny = document.createElement("button");
-      div.appendChild(btnFunny);
-      btnFunny.innerHTML = "funny";
-  
-      const btnNaughty = document.createElement("button");
-      div.appendChild(btnNaughty);
-      btnNaughty.innerHTML = "naughty";
-  
-      const btnRomantic = document.createElement("button");
-      div.appendChild(btnRomantic);
-      btnRomantic.innerHTML = "romantic";
-  
-      btnFunny.addEventListener("click", frauFürFrauFunny);
-      btnNaughty.addEventListener("click", frauFürFrauNaughty);
-      btnRomantic.addEventListener("click", frauFürFrauRomantic);
-      }, 3000);
+    modus();
   }
 }

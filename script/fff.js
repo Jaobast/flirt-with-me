@@ -103,24 +103,66 @@ function fffBot() {
     }, 6500);
   } else {
     setTimeout(function() {showNextMessageFrau("wie magst du den Flirt?", 1000);}, 1000);
-    setTimeout(function() {
-      const div = document.querySelector(".user-input");
-          
-      const btnFunny = document.createElement("button");
-      div.appendChild(btnFunny);
-      btnFunny.innerHTML = "funny";
-  
-      const btnNaughty = document.createElement("button");
-      div.appendChild(btnNaughty);
-      btnNaughty.innerHTML = "naughty";
-  
-      const btnRomantic = document.createElement("button");
-      div.appendChild(btnRomantic);
-      btnRomantic.innerHTML = "romantic";
-  
-      btnFunny.addEventListener("click", frauFürFrauFunny);
-      btnNaughty.addEventListener("click", frauFürFrauNaughty);
-      btnRomantic.addEventListener("click", frauFürFrauRomantic);
-      }, 3000);
+    modus();
   }
+}
+
+function modus(){
+  setTimeout(function() {
+    const div = document.querySelector(".user-input");
+        
+    const btnFunny = document.createElement("button");
+    div.appendChild(btnFunny);
+    btnFunny.innerHTML = "funny";
+
+    const btnNaughty = document.createElement("button");
+    div.appendChild(btnNaughty);
+    btnNaughty.innerHTML = "naughty";
+
+    const btnRomantic = document.createElement("button");
+    div.appendChild(btnRomantic);
+    btnRomantic.innerHTML = "romantic";
+
+    btnFunny.addEventListener("click", FlirtFunny);
+    btnNaughty.addEventListener("click", FlirtNaughty);
+    btnRomantic.addEventListener("click", FlirtRomantic);
+    }, 3000);
+}
+
+function FlirtNaughty(){
+  removeButtons();
+  const body = document.body;
+  body.classList.add("body-naughty");
+  setTimeout(function(){
+  const userMessages = document.querySelectorAll(".user-message");
+  userMessages.forEach(message => {
+    message.classList.add("user-naughty");
+  });
+
+  const botMessages = document.querySelectorAll(".bot-message");
+  botMessages.forEach(message => {
+    message.classList.add("bot-naughty");
+  });
+}, 500);
+
+  setTimeout(function(){appendUserMessage("TESTE");}, 4000);
+}
+
+function FlirtFunny(){
+  removeButtons();
+  const body = document.body;
+  body.classList.add("body-funny");
+  setTimeout(function(){
+    const userMessages = document.querySelectorAll(".user-message");
+    userMessages.forEach(message => {
+      message.classList.add("user-funny");
+    });
+  
+    const botMessages = document.querySelectorAll(".bot-message");
+    botMessages.forEach(message => {
+      message.classList.add("bot-funny");
+    });
+  }, 500);
+
+  setTimeout(function(){appendUserMessage("TESTE");}, 4000);
 }

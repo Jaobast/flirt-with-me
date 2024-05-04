@@ -96,11 +96,46 @@ button{
     border: none;
     padding: 5px 10px;
     margin: 10px 5px;
-} 
+}
+
+.disabled{
+    background-color: rgb(191, 191, 191)!important;
+}
 
 .img-content img{
     border-radius: 20px;
 }
+
+.body-naughty{ animation: backcolor-naughty 3s forwards;}
+
+@keyframes backcolor-naughty {
+    0% {background-color: transparent;}
+    100% {background-color: rgb(104, 23, 23);}
+}
+
+.button-naughty{background-color: black;color: white;}
+
+.user-message.user-naughty .message-content {color: rgb(0, 0, 0); background-color: rgb(179, 142, 142);}
+
+.bot-message.bot-naughty .message-content {color: rgb(255, 255, 255);background-color: rgb(141, 72, 72);}
+
+.body-funny{
+    animation: backcolor-funny 3s forwards;
+}
+
+@keyframes backcolor-funny {
+    0% {background-color: transparent;}
+    100% {background-color: rgb(99, 7, 192);}
+}
+
+.user-message.user-funny .message-content {color: rgb(0, 0, 0); background-color: rgb(252, 154, 233);}
+
+.bot-message.bot-funny .message-content {color: rgb(0, 0, 0); background-color: rgb(248, 239, 179);}
+
+
+
+
+
 
 
 
