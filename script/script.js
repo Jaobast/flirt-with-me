@@ -53,7 +53,7 @@ function geschlecht(){
   setTimeout (function(){appendUserMessage("du darfst mich anmachen");}, 1000);
   
 
-  setTimeout (function(){showNextMessage("Bevor ich mein Verführungsspiel beginne, könntest du mir verraten, welches Geschlecht du für dich bevorzugst?", 2000);}, 3000);
+  setTimeout (function(){showNextMessage("Bevor ich mein Verführungsspiel beginne, könntest du mir verraten, welches Geschlecht du für dich bevorzugst?", 2000);}, 2000);
   setTimeout(function() {
     const div = document.querySelector(".user-input");
         
@@ -69,8 +69,8 @@ function geschlecht(){
     div.appendChild(btndivers);
     btndivers.innerHTML = "divers";
 
-    btnfrau.addEventListener("click", flirtfrau);
-    btnmann.addEventListener("click", flirtmann);
+    btnfrau.addEventListener("click", flirtFrau);
+    btnmann.addEventListener("click", flirtMann);
     btnnon.addEventListener("click", flirtdivers);
-    }, 6000);
+    }, 5000);
 }

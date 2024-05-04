@@ -52,6 +52,13 @@ body{
     padding: 10px 8px;
     border-radius: 50%;
 }
+
+.woman-avatar{
+    margin-top: -13px; 
+    margin-bottom: -10px;
+    width: 45px;
+    height: auto;
+}
   
 .user-message{
     margin: 12px 0;
