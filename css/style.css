@@ -141,12 +141,12 @@ button{
 
 @keyframes backcolor-romantic {
     0% {background-color: transparent;}
-    100% {background-color: rgb(250, 172, 232);}
+    100% {background-color: #ed99bb;}
 }
 
-.user-message.user-romantic .message-content {color: rgb(0, 0, 0); background-color: rgb(255, 221, 247);}
+.user-message.user-romantic .message-content {color: rgb(255, 255, 255); background-color: #ba79ba;}
 
-.bot-message.bot-romantic .message-content {color: rgb(255, 255, 255); background-color: rgb(227, 122, 202);}
+.bot-message.bot-romantic .message-content {color: rgb(255, 255, 255); background-color: #937fbe;}
 
 
 
