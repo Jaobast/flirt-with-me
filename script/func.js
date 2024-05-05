@@ -4,9 +4,13 @@ function appendBotMessage(messageText) {
   const messageDiv = document.createElement("div");
   messageDiv.className = "message bot-message";
 
-  const avatar = document.createElement("div");
-  avatar.className = "fas fa-robot message-avatar";
-  messageDiv.appendChild(avatar);
+/*   const avatarContainer = document.createElement("div");
+  const avatar = document.createElement("img");
+  avatar.src = "img/memoji-bot.png";
+  avatarContainer.classList.add("avatar-container");
+  avatar.classList.add("avatar");
+  avatarContainer.appendChild(avatar);
+  messageDiv.appendChild(avatarContainer); */
 
   const contentDiv = document.createElement("div");
   contentDiv.className = "message-content";

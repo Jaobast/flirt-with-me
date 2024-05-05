@@ -15,6 +15,7 @@ const mfm_array_01 = [
   ];
 
 function flirtmfm(){
+  setTimeout ( avatarMann(), 500);
     appendUserMessage("ich möchtest von einem anderen Mann geflirtert werden");
     removeButtons();
     setTimeout (function(){showNextMessageMann("✨fagot✨ 💅🏼", 1000);}, 500);

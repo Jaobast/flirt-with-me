@@ -22,14 +22,6 @@ function appendBotMessageFrau(messageText) {
   messageDiv.className = "message bot-message";
   chatContent.appendChild(messageDiv);
 
-  const avatar = document.createElement("div");
-  avatar.className = "message-avatar";
-  const img = document.createElement("img");
-  img.src = "img/icon-woman-whitesmoke.svg";
-  img.classList.add("woman-avatar");
-  avatar.appendChild(img);
-  messageDiv.appendChild(avatar);
-
   const contentDiv = document.createElement("div");
   contentDiv.className = "message-content";
   contentDiv.textContent = messageText;
@@ -72,20 +64,22 @@ function flirtFrau(){
   }
 
 function flirtfff(){
-    appendUserMessage("ich möchtest von einer anderer Frau geflirtert werden");
-    removeButtons();
-    setTimeout (function(){showNextMessageFrau("✨lesb✨", 1000);}, 500);
-    setTimeout (function(){showNextMessageFrau("🫦", 1000);}, 500);
-    setTimeout (function(){showNextMessageFrau("hahah so ist viel besser", 1000);}, 2000);
-    setTimeout(function() {
-        const div = document.querySelector(".user-input");
-        const btnFlirt = document.createElement("button");
-        div.appendChild(btnFlirt);
-        btnFlirt.innerHTML = "Flirt mit mir!";
-        btnFlirt.classList.add("fff");
+  setTimeout ( avatarFrau(), 500);
 
-        btnFlirt.addEventListener("click", fffBot);
-    }, 4000);
+  appendUserMessage("ich möchtest von einer anderer Frau geflirtert werden");
+  removeButtons();
+  setTimeout (function(){showNextMessageFrau("✨lesb✨", 1000);}, 500);
+  setTimeout (function(){showNextMessageFrau("🫦", 1000);}, 2500);
+  setTimeout (function(){showNextMessageFrau("hahah so ist viel besser", 1000);}, 4500);
+  setTimeout(function() {
+      const div = document.querySelector(".user-input");
+      const btnFlirt = document.createElement("button");
+      div.appendChild(btnFlirt);
+      btnFlirt.innerHTML = "Flirt mit mir!";
+      btnFlirt.classList.add("fff");
+
+      btnFlirt.addEventListener("click", fffBot);
+  }, 6500);
 }
 
 
@@ -145,7 +139,7 @@ function FlirtNaughty(){
   });
 }, 1000);
 
-  setTimeout(function(){appendUserMessage("TESTE");}, 4000);
+  setTimeout(function(){appendUserMessage("du kannst naughty sein...");}, 4000);
 }
 
 function FlirtFunny(){
@@ -164,7 +158,7 @@ function FlirtFunny(){
     });
   }, 1000);
 
-  setTimeout(function(){appendUserMessage("TESTE");}, 4000);
+  setTimeout(function(){appendUserMessage("bring mich zu lachen");}, 4000);
 }
 
 function FlirtRomantic(){
@@ -183,5 +177,19 @@ function FlirtRomantic(){
     });
   }, 1000);
 
-  setTimeout(function(){appendUserMessage("TESTE");}, 4000);
+  setTimeout(function(){appendUserMessage("ich mag, wenn du romantisch bist");}, 4000);
+}
+
+function avatarFrau(){
+  const avatar = document.querySelector(".avatar");
+  avatar.src = "img/memoji-woman.png";
+  const avatarName = document.querySelector(".avatar-name");
+  avatarName.innerHTML = "Flora";
+}
+
+function avatarMann(){
+  const avatar = document.querySelector(".avatar");
+  avatar.src = "img/memoji-man.png";
+  const avatarName = document.querySelector(".avatar-name");
+  avatarName.innerHTML = "Joe";
 }

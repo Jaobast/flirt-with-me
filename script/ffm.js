@@ -40,6 +40,7 @@ const ffm_array_01 = [
     }
   
   function flirtffm(){
+    setTimeout ( avatarFrau(), 500);
       appendUserMessage("ich möchtest von einer Frau geflirtert werden");
       removeButtons();
       setTimeout (function(){showNextMessageFrau("🫦", 1000);}, 500);

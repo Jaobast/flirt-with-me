@@ -44,6 +44,7 @@ function appendBotMessageMann(messageText) {
   }
 
 function flirtmff(){
+  setTimeout ( avatarMann(), 500);
     appendUserMessage("ich möchtest von einem Mann geflirtert werden");
     removeButtons();
     setTimeout (function(){showNextMessageMann("🍆💦", 1000);}, 500);
