@@ -23,6 +23,14 @@ function appendBotMessage(messageText) {
   return messageDiv;
 }
 
+function showNextMessage(messageText, delay) {
+  const messageDiv = appendBotMessage("...");
+  setTimeout(function() {
+    removeMessage(messageDiv);
+    appendBotMessage(messageText); 
+  }, delay);
+}
+
 
 function appendBotImg(link) {
   const messageDiv = document.createElement("div");
@@ -40,18 +48,6 @@ function appendBotImg(link) {
   return messageDiv;
 }
 
-function removeMessage(messageDiv) {
-  messageDiv.remove();
-}
-
-function showNextMessage(messageText, delay) {
-  const messageDiv = appendBotMessage("...");
-  setTimeout(function() {
-    removeMessage(messageDiv);
-    appendBotMessage(messageText); 
-  }, delay);
-}
-
 function showNextImg(link, delay) {
   const messageDiv = appendBotMessage("...");
   setTimeout(function() {
@@ -60,7 +56,11 @@ function showNextImg(link, delay) {
   }, delay);
 }
 
-//USER USER USER USER USER USER USER USER USER USER USER USER 
+function removeMessage(messageDiv) {
+  messageDiv.remove();
+}
+
+// USER   USER   USER   USER   USER   USER   USER   USER   USER   USER   USER   USER   
 
 function appendUserMessage(message) {
   const messageDiv = document.createElement("div");
@@ -92,10 +92,6 @@ function appendUserImg(link){
   messageDiv.className = "message user-message";
   chatContent.appendChild(messageDiv);
 
-  const avatar = document.createElement("div");
-  avatar.className = "fas fa-smile message-avatar";
-  /* messageDiv.appendChild(avatar); */
-
   const contentDiv = document.createElement("div");
   contentDiv.className = "img-content";
   
@@ -109,4 +105,118 @@ function removeButtons(){
     document.querySelectorAll("button").forEach(button => {
         button.style.display = "none";
       });
+}
+
+// AVATAR   AVATAR   AVATAR   AVATAR   AVATAR   AVATAR   AVATAR   AVATAR   AVATAR   
+
+function avatarFrau(){
+  document.querySelector(".avatar").src = "img/memoji-woman.png";
+  document.querySelector(".avatar-name").innerHTML = "Flora";
+  document.querySelector(".avatar-name").style.color = "salmon";
+  document.querySelector(".avatar-container").style.backgroundColor = "dodgerblue";
+}
+
+function avatarMann(){
+  document.querySelector(".avatar").src = "img/memoji-man.png";
+  document.querySelector(".avatar-name").innerHTML = "Joe";
+  document.querySelector(".avatar-name").style.color = "salmon";
+  document.querySelector(".avatar-container").style.backgroundColor = "dodgerblue";
+}
+
+// MODUS   MODUS   MODUS   MODUS   MODUS   MODUS   MODUS   MODUS   MODUS   MODUS   
+
+function modus(){
+  setTimeout(function() {
+    const div = document.querySelector(".user-input");
+        
+    const btnFunny = document.createElement("button");
+    div.appendChild(btnFunny);
+    btnFunny.innerHTML = "funny";
+
+    const btnNaughty = document.createElement("button");
+    div.appendChild(btnNaughty);
+    btnNaughty.innerHTML = "naughty";
+
+    const btnRomantic = document.createElement("button");
+    div.appendChild(btnRomantic);
+    btnRomantic.innerHTML = "romantic";
+
+    btnFunny.addEventListener("click", FlirtFunny);
+    btnNaughty.addEventListener("click", FlirtNaughty);
+    btnRomantic.addEventListener("click", FlirtRomantic);
+    }, 3000);
+}
+
+function FlirtNaughty(){
+  removeButtons();
+  const body = document.body;
+  body.classList.add("body-naughty");
+  setTimeout(function(){
+  const userMessages = document.querySelectorAll(".user-message");
+  userMessages.forEach(message => {
+    message.classList.add("user-naughty");
+  });
+
+  const botMessages = document.querySelectorAll(".bot-message");
+  botMessages.forEach(message => {
+    message.classList.add("bot-naughty");
+  });
+  document.getElementById("header").classList.add("header-naughty");
+
+  document.querySelector(".avatar-container").style.backgroundColor = "rgb(141, 72, 72)";
+  document.querySelector(".avatar-name").style.color = "rgb(179, 142, 142)";
+  document.querySelector(".h2").style.color = "rgb(179, 142, 142)";
+}, 1000);
+
+  setTimeout(function(){appendUserMessage("du kannst naughty sein...");}, 4000);
+}
+
+function FlirtFunny(){
+  removeButtons();
+  const body = document.body;
+  body.classList.add("body-funny");
+  setTimeout(function(){
+    const userMessages = document.querySelectorAll(".user-message");
+    userMessages.forEach(message => {
+      message.classList.add("user-funny");
+    });
+  
+    const botMessages = document.querySelectorAll(".bot-message");
+    botMessages.forEach(message => {
+      message.classList.add("bot-funny");
+    });
+
+    document.getElementById("header").classList.add("header-funny");
+
+    document.querySelector(".avatar-container").style.backgroundColor = "rgb(248, 239, 179)";
+    document.querySelector(".avatar-name").style.color = "rgb(252, 154, 233)";
+    document.querySelector(".h2").style.color = "rgb(252, 154, 233)";
+  }, 1000);
+
+  setTimeout(function(){appendUserMessage("bring mich zu lachen");}, 4000);
+}
+
+function FlirtRomantic(){
+  removeButtons();
+  const body = document.body;
+  body.classList.add("body-romantic");
+  setTimeout(function(){
+    const userMessages = document.querySelectorAll(".user-message");
+    userMessages.forEach(message => {
+      message.classList.add("user-romantic");
+    });
+  
+    const botMessages = document.querySelectorAll(".bot-message");
+    botMessages.forEach(message => {
+      message.classList.add("bot-romantic");
+    });
+
+    document.getElementById("header").classList.add("header-romantic");
+  
+    document.querySelector(".avatar-container").style.backgroundColor = "#937fbe";
+    document.querySelector(".avatar-name").style.color = "white";
+    document.querySelector(".h2").style.color = "white";
+  }, 1000);
+
+  setTimeout(function(){appendUserMessage("ich mag, wenn du romantisch bist");}, 4000);
 }
