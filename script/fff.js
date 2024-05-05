@@ -17,27 +17,6 @@ const fff_array_02 = [
   ["ich würde gerne wissen, wie meine nächste Freundin heißt!"]
 ];
 
-function appendBotMessageFrau(messageText) {
-  const messageDiv = document.createElement("div");
-  messageDiv.className = "message bot-message";
-  chatContent.appendChild(messageDiv);
-
-  const contentDiv = document.createElement("div");
-  contentDiv.className = "message-content";
-  contentDiv.textContent = messageText;
-  messageDiv.appendChild(contentDiv);
-
-  return messageDiv;
-}
-
-function showNextMessageFrau(messageText, delay) {
-  const messageDiv = appendBotMessageFrau("...");
-  setTimeout(function() {
-    removeMessage(messageDiv);
-    appendBotMessageFrau(messageText); 
-  }, delay);
-}
-
 
 function flirtFrau(){
     appendUserMessage("ich bin weiblich");
@@ -68,9 +47,9 @@ function flirtfff(){
 
   appendUserMessage("ich möchtest von einer anderer Frau geflirtert werden");
   removeButtons();
-  setTimeout (function(){showNextMessageFrau("✨lesb✨", 1000);}, 500);
-  setTimeout (function(){showNextMessageFrau("🫦", 1000);}, 2500);
-  setTimeout (function(){showNextMessageFrau("hahah so ist viel besser", 1000);}, 4500);
+  setTimeout (function(){showNextMessage("✨lesb✨", 1000);}, 500);
+  setTimeout (function(){showNextMessage("🫦", 1000);}, 2500);
+  setTimeout (function(){showNextMessage("hahah so ist viel besser", 1000);}, 4500);
   setTimeout(function() {
       const div = document.querySelector(".user-input");
       const btnFlirt = document.createElement("button");
@@ -88,15 +67,15 @@ function fffBot() {
   removeButtons();
 
   if (flirtIndex < 2) {
-    setTimeout(function() {showNextMessageFrau(fff_array_01[flirtIndex][0], 1500);}, 1000);
-    setTimeout(function() {showNextMessageFrau(fff_array_02[flirtIndex][0], 2500);}, 3000);
+    setTimeout(function() {showNextMessage(fff_array_01[flirtIndex][0], 1500);}, 1000);
+    setTimeout(function() {showNextMessage(fff_array_02[flirtIndex][0], 2500);}, 3000);
     setTimeout(function() {
       document.querySelector(".fff").style.display = "inline";
       flirtIndex++;
       firstMessageIndex++;
     }, 6500);
   } else {
-    setTimeout(function() {showNextMessageFrau("wie magst du den Flirt?", 1000);}, 1000);
+    setTimeout(function() {showNextMessage("wie magst du den Flirt?", 1000);}, 1000);
     modus();
   }
 }
@@ -137,6 +116,11 @@ function FlirtNaughty(){
   botMessages.forEach(message => {
     message.classList.add("bot-naughty");
   });
+
+  const avatar = document.querySelector(".avatar-container");
+  avatar.style.backgroundColor = "rgb(141, 72, 72)";
+  const avatarName = document.querySelector(".avatar-name");
+  avatarName.style.color = "rgb(179, 142, 142)";
 }, 1000);
 
   setTimeout(function(){appendUserMessage("du kannst naughty sein...");}, 4000);
@@ -156,6 +140,11 @@ function FlirtFunny(){
     botMessages.forEach(message => {
       message.classList.add("bot-funny");
     });
+
+    const avatar = document.querySelector(".avatar-container");
+    avatar.style.backgroundColor = "rgb(248, 239, 179)";
+    const avatarName = document.querySelector(".avatar-name");
+    avatarName.style.color = "rgb(252, 154, 233)";
   }, 1000);
 
   setTimeout(function(){appendUserMessage("bring mich zu lachen");}, 4000);
@@ -175,6 +164,11 @@ function FlirtRomantic(){
     botMessages.forEach(message => {
       message.classList.add("bot-romantic");
     });
+  
+    const avatar = document.querySelector(".avatar-container");
+    avatar.style.backgroundColor = "#937fbe";
+    const avatarName = document.querySelector(".avatar-name");
+    avatarName.style.color = "white";
   }, 1000);
 
   setTimeout(function(){appendUserMessage("ich mag, wenn du romantisch bist");}, 4000);

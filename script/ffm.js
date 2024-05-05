@@ -43,8 +43,8 @@ const ffm_array_01 = [
     setTimeout ( avatarFrau(), 500);
       appendUserMessage("ich möchtest von einer Frau geflirtert werden");
       removeButtons();
-      setTimeout (function(){showNextMessageFrau("🫦", 1000);}, 500);
-      setTimeout (function(){showNextMessageFrau("hahah so ist viel besser", 1000);}, 2000);
+      setTimeout (function(){showNextMessage("🫦", 1000);}, 500);
+      setTimeout (function(){showNextMessage("hahah so ist viel besser", 1000);}, 2000);
       setTimeout(function() {
           const div = document.querySelector(".user-input");
           const btnFlirt = document.createElement("button");
@@ -62,15 +62,15 @@ const ffm_array_01 = [
     removeButtons();
   
     if (flirtIndex < 2) {
-      setTimeout(function() {showNextMessageFrau(ffm_array_01[flirtIndex][0], 1500);}, 1000);
-      setTimeout(function() {showNextMessageFrau(ffm_array_02[flirtIndex][0], 2500);}, 3000);
+      setTimeout(function() {showNextMessage(ffm_array_01[flirtIndex][0], 1500);}, 1000);
+      setTimeout(function() {showNextMessage(ffm_array_02[flirtIndex][0], 2500);}, 3000);
       setTimeout(function() {
         document.querySelector(".ffm").style.display = "inline";
         flirtIndex++;
         firstMessageIndex++;
       }, 6500);
     } else {
-      setTimeout(function() {showNextMessageFrau("wie magst du den Flirt?", 1000);}, 1000);
+      setTimeout(function() {showNextMessage("wie magst du den Flirt?", 1000);}, 1000);
       modus();
     }
   }

@@ -18,9 +18,9 @@ function flirtmfm(){
   setTimeout ( avatarMann(), 500);
     appendUserMessage("ich möchtest von einem anderen Mann geflirtert werden");
     removeButtons();
-    setTimeout (function(){showNextMessageMann("✨fagot✨ 💅🏼", 1000);}, 500);
-    setTimeout (function(){showNextMessageMann("Grindr feelings", 1000);}, 2000);
-    setTimeout (function(){showNextMessageMann("heheh", 1000);}, 4000);
+    setTimeout (function(){showNextMessage("✨fagot✨ 💅🏼", 1000);}, 500);
+    setTimeout (function(){showNextMessage("Grindr feelings", 1000);}, 2000);
+    setTimeout (function(){showNextMessage("heheh", 1000);}, 4000);
     setTimeout(function() {
         const div = document.querySelector(".user-input");
         const btnFlirt = document.createElement("button");
@@ -38,15 +38,15 @@ function mfmBot(){
   removeButtons();
 
   if (flirtIndex < 2) {
-    setTimeout(function() {showNextMessageMann(mfm_array_01[flirtIndex][0], 1500);}, 1000);
-    setTimeout(function() {showNextMessageMann(mfm_array_02[flirtIndex][0], 2500);}, 3000);
+    setTimeout(function() {showNextMessage(mfm_array_01[flirtIndex][0], 1500);}, 1000);
+    setTimeout(function() {showNextMessage(mfm_array_02[flirtIndex][0], 2500);}, 3000);
     setTimeout(function() {
       document.querySelector(".mfm").style.display = "inline";
       flirtIndex++;
       firstMessageIndex++;
     }, 6500);
   } else {
-    setTimeout(function() {showNextMessageMann("wie magst du den Flirt?", 1000);}, 1000);
+    setTimeout(function() {showNextMessage("wie magst du den Flirt?", 1000);}, 1000);
     modus();
   }
 }
