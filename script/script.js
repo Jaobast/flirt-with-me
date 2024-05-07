@@ -53,7 +53,7 @@ function geschlecht(){
   setTimeout (function(){appendUserMessage("du darfst mich anmachen");}, 1000);
   
 
-  setTimeout (function(){showNextMessage("Bevor ich mein Verführungsspiel beginne, könntest du mir verraten, welches Geschlecht du für dich bevorzugst?", 2000);}, 2000);
+  setTimeout (function(){showNextMessage("Bevor ich mein Verführungsspiel beginne, könntest du mir verraten, mit welchem Geschlecht identifizierst du dich?", 2000);}, 2000);
   setTimeout(function() {
     const div = document.querySelector(".user-input");
         

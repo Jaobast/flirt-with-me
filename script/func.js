@@ -188,9 +188,9 @@ function FlirtFunny(){
 
     document.getElementById("header").classList.add("header-funny");
 
-    document.querySelector(".avatar-container").style.backgroundColor = "rgb(248, 239, 179)";
-    document.querySelector(".avatar-name").style.color = "rgb(252, 154, 233)";
-    document.querySelector(".h2").style.color = "rgb(252, 154, 233)";
+    document.querySelector(".avatar-container").style.backgroundColor = "rgb(252, 154, 233)";
+    document.querySelector(".avatar-name").style.color = "rgb(248, 239, 179)";
+    document.querySelector(".h2").style.color = "rgb(248, 239, 179)";
   }, 1000);
 
   setTimeout(function(){appendUserMessage("bring mich zu lachen");}, 4000);
