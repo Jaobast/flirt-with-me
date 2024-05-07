@@ -59,7 +59,11 @@ body{
     background-color: salmon;
     overflow: hidden;
 }
-  
+
+.avatar {
+    transform: translateY(10px);
+}
+
 
 .container{
     overflow: auto;
