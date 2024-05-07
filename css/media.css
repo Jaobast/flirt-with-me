@@ -1,4 +1,4 @@
-@media (max-width: 1000px) {
+@media (max-width: 1000px) and (orientation: portrait){
     .message .message-avatar, .user-message .message-avatar, .message, button{
         font-size: 35px;
         transform: translateZ(0);
@@ -28,7 +28,7 @@
     }
 
 } 
-@media (min-width: 1000px) {
+@media (orientation: landscape) {
 
     .container{
         height: 88vh;
@@ -58,5 +58,14 @@
 
     .h2{
         font-size: 40px;
+    }
+
+    .avatar-area p{
+        font-size: 30px;
+    }
+
+    .avatar, .avatar-container{
+        width: 13vh;
+        height: 13vh;
     }
 }
