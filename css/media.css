@@ -1,4 +1,4 @@
-@media (max-width: 1200px) {
+@media (max-width: 1000px) {
     .message .message-avatar, .user-message .message-avatar, .message, button{
         font-size: 35px;
         transform: translateZ(0);
@@ -28,10 +28,35 @@
     }
 
 } 
-@media (min-width: 1200px) {
+@media (min-width: 1000px) {
+
+    .container{
+        height: 88vh;
+    }
+
+    .chat-content{
+        margin: 0 0 0 3vw;
+        width: 92%;
+    }
+
     button:hover{
         background-color: white;
         color: dodgerblue;
     }
     
+    button{
+        padding: 10px 35px;
+        font-size: 15px;
+        margin: 10px;
+    }
+
+    .title{
+        position: absolute;
+        transform: translateX(-50%);
+        left: 50%;
+    }
+
+    .h2{
+        font-size: 40px;
+    }
 }
