@@ -18,6 +18,11 @@ function appendBotMessage(messageText) {
     messageDiv.classList.add("bot-romantic");
   }
 
+  const botMessageDivs = document.querySelectorAll(".message-content");
+  if (botMessageDivs.length === 0 || botMessageDivs[0].childNodes[0] === messageDiv) {
+    contentDiv.classList.add("first");
+  }
+
   chatContent.appendChild(messageDiv);
 
   return messageDiv;
