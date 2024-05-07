@@ -1,6 +1,6 @@
 setTimeout (function(){showNextMessage("Hey!", 500);}, 0);
 setTimeout (function(){showNextMessage("Ich bin der Flirt-Bot und ich bin hier, um dein Herz zu erobern.", 1000);}, 1000);
-setTimeout (function(){showNextMessage("Erlaubst du mir, mit dir zu flirten? 😏", 1000);}, 3000);
+setTimeout (function(){showNextMessage("Erlaubst du mir, mit dir zu flirten? 😏", 1000);}, 2500);
 setTimeout (function(){
   const div = document.querySelector(".user-input");
         
@@ -14,7 +14,7 @@ setTimeout (function(){
 
   btnJa.addEventListener("click", geschlecht);
   btnNein.addEventListener("click", noFlirt);
-}, 5000);
+}, 4500);
 
 
 function noFlirt(){
@@ -22,26 +22,26 @@ function noFlirt(){
   setTimeout(function(){appendUserMessage("Nope!");}, 0);
   setTimeout(function(){appendUserMessage("ich bin mir nicht sicher");}, 1000);
   setTimeout(function(){appendUserImg("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGx0ZzV2am4xaXJ0eDYzaGY0aTV3N3ByOGk3bWVpMjFmaW1wY3ZsYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/L2Ts72zLIcTWujzCxk/giphy.gif");}, 2000);
-  setTimeout (function(){showNextImg("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDM4M210NDUwazNyZzlpZ3RhM296dmZ2aG1jN3gzZWkycTBrb2pwMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/RiEqMWo9BXzkBAuAhh/giphy.gif", 2000);}, 4000);
-  setTimeout (function(){showNextMessage("excuse me?", 500);}, 7000);
-  setTimeout (function(){showNextMessage("ich frage nochmal", 1500);}, 8500);
-  setTimeout (function(){showNextMessage("und du bekommst wieder zwei Auswahl", 1500);}, 11000);
-  setTimeout (function(){showNextMessage("😇", 500);}, 13500);
-  setTimeout (function(){showNextMessage("Erlaubst du mir, mit dir zu flirten? 🙃", 2000);}, 14500);
-setTimeout (function(){
-  const div = document.querySelector(".user-input");
+  setTimeout (function(){showNextImg("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDM4M210NDUwazNyZzlpZ3RhM296dmZ2aG1jN3gzZWkycTBrb2pwMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/RiEqMWo9BXzkBAuAhh/giphy.gif", 2000);}, 3000);
+  setTimeout (function(){showNextMessage("excuse me?", 500);}, 5500);
+  setTimeout (function(){showNextMessage("ich frage nochmal", 1000);}, 7000);
+  setTimeout (function(){showNextMessage("und du bekommst wieder zwei Auswahl", 1000);}, 9000);
+  setTimeout (function(){showNextMessage("😇", 500);}, 11000);
+  setTimeout (function(){showNextMessage("Erlaubst du mir, mit dir zu flirten? 🙃", 2000);}, 12500);
+  setTimeout (function(){
+    const div = document.querySelector(".user-input");
         
-  const btnJa = document.createElement("button");
-  div.appendChild(btnJa);
-  btnJa.innerHTML = "Yes!!";
-
-  const btnKlar = document.createElement("button");
-  div.appendChild(btnKlar);
-  btnKlar.innerHTML = "klaro!!";
-
-  btnJa.addEventListener("click", geschlecht);
-  btnKlar.addEventListener("click", geschlecht);
-}, 17500);
+    const btnJa = document.createElement("button");
+    div.appendChild(btnJa);
+    btnJa.innerHTML = "Yes!!";
+  
+    const btnKlar = document.createElement("button");
+    div.appendChild(btnKlar);
+    btnKlar.innerHTML = "klaro!!";
+  
+    btnJa.addEventListener("click", geschlecht);
+    btnKlar.addEventListener("click", geschlecht);
+  }, 15500);
 }
 
 
