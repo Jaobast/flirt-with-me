@@ -73,7 +73,7 @@
     40%, 95% {
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
-        background-color: rgba(30, 143, 255, 0.599);
+        background-color: rgba(0, 0, 0, 0.599);
     }
 
     100%, 0% {
