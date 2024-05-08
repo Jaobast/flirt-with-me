@@ -3,7 +3,7 @@
     --lowlight: #111;
     --side: #e8e8e8;
     --side-dark: #120e08;
-    --coin-size: 50vw;
+    --coin-size: 10vh;
     --coin-face: url('../img/memoji-woman.png');
 }
 
@@ -34,8 +34,8 @@
 .coin-box{
     position: absolute;
     transform: translate(-50%,-50%);
+    top: 100%;
     left: 50%;
-    top: 50%;
     animation: move 3s linear forwards;
 }
   
@@ -62,10 +62,10 @@
   }
 
   @keyframes move{
-    0%{ transform: scale(1) translate(-50%, -50%);}
-    80%{ transform: scale(1) translate(-50%, -50%);}
-
-    100%{ transform: scale(0.4) translate(-300%, -510%);}
+    0%{ transform: scale(1) translate(10%, 100%);}
+    20%{ transform: scale(3) translate(-15%, -200%);}
+    80%{ transform: scale(3) translate(-15%, -200%);}
+    100%{ transform: scale(1) translate(-230%, -900%);}
 }
   
 @keyframes rotate {
