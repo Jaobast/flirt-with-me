@@ -15,10 +15,13 @@
     height: 100vh;
     width: 100vw;
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.5);
+/*     background-color: rgba(30, 143, 255, 0.599);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); */
     z-index: 5;
     top: 0;
     left: 0;
+    animation: blurAnimation 3s forwards;
 }
   
 .coin {
@@ -57,15 +60,27 @@
     animation: rotate 1s linear 2 forwards;
 }
 
-.coin2{
-    animation: width 6s linear forwards;
-  }
 
   @keyframes move{
     0%{ transform: scale(1) translate(10%, 100%);}
     20%{ transform: scale(3) translate(-15%, -200%);}
     80%{ transform: scale(3) translate(-15%, -200%);}
+    95%{ transform: scale(2) translate(-25%, -300%);}
     100%{ transform: scale(1) translate(-230%, -900%);}
+}
+
+@keyframes blurAnimation {
+    40%, 95% {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        background-color: rgba(30, 143, 255, 0.599);
+    }
+
+    100%, 0% {
+        backdrop-filter: blur(0px);
+        -webkit-backdrop-filter: blur(0px);
+        background-color: rgba(30, 143, 255, 0);
+    }
 }
   
 @keyframes rotate {

@@ -51,7 +51,7 @@ function flirtfff(){
           coinContainer.remove();
       }
   }, 3000);
-  setTimeout ( avatarFrau(), 3000);
+  setTimeout (avatarFrau, 2900);
 
   removeButtons();
   setTimeout (function(){showNextMessage("✨lesb✨", 1000);}, 3500);
@@ -78,12 +78,12 @@ function coin(){
   coinBox.classList.add("coin-box");
   
   const coin = document.createElement("div");
-  coin.classList.add("coin", "coin2"); // Adicionando classes "coin" e "coin2"
+  coin.classList.add("coin");
   
   coinBox.appendChild(coin);
   coinContainer.appendChild(coinBox);
   
-  const body = document.querySelector(".bigcontainer"); // Corrigindo a classe para ".bigcontainer"
+  const body = document.querySelector(".bigcontainer");
   body.appendChild(coinContainer);
 }
 
