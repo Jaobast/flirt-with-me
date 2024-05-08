@@ -43,37 +43,20 @@ function flirtFrau(){
   }
 
 function flirtfff(){
-  setTimeout ( avatarFrau(), 500);
-
   appendUserMessage("ich möchtest von einer anderer Frau geflirtert werden");
-  setTimeout(coin, 500);
+  setTimeout(coin, 0);
   setTimeout(function() {
       const coinContainer = document.querySelector(".coin-container");
       if (coinContainer) {
           coinContainer.remove();
       }
-  }, 6500);
-  setTimeout (function(){
+  }, 3000);
+  setTimeout ( avatarFrau(), 3000);
 
-    const coinContainer = document.createElement("div");
-    coinContainer.classList.remove("coin-container");
-    
-    const coinBox = document.createElement("div");
-    coinBox.classList.remove("coin-box");
-    
-    const coin = document.createElement("div");
-    coin.classList.remove("coin", "coin2"); // Adicionando classes "coin" e "coin2"
-    
-    coinBox.appendChild(coin);
-    coinContainer.appendChild(coinBox);
-    
-    const body = document.querySelector(".bigcontainer"); // Corrigindo a classe para ".bigcontainer"
-    body.appendChild(coinContainer);
-  }, 6500);
   removeButtons();
-  setTimeout (function(){showNextMessage("✨lesb✨", 1000);}, 500);
-  setTimeout (function(){showNextMessage("🫦", 1000);}, 2500);
-  setTimeout (function(){showNextMessage("hahah so ist viel besser", 1000);}, 4500);
+  setTimeout (function(){showNextMessage("✨lesb✨", 1000);}, 3500);
+  setTimeout (function(){showNextMessage("🫦", 1000);}, 5500);
+  setTimeout (function(){showNextMessage("hahah so ist viel besser", 1000);}, 7500);
   setTimeout(function() {
       const div = document.querySelector(".user-input");
       const btnFlirt = document.createElement("button");
@@ -82,7 +65,7 @@ function flirtfff(){
       btnFlirt.classList.add("fff");
 
       btnFlirt.addEventListener("click", fffBot);
-  }, 6500);
+  }, 9500);
 }
 
 
