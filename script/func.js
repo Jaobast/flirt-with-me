@@ -128,6 +128,30 @@ function avatarMann(){
   document.querySelector(".avatar-container").style.backgroundColor = "dodgerblue";
 }
 
+// COIN  COIN  COIN  COIN  COIN  COIN  COIN  COIN  COIN  COIN  COIN  COIN  COIN  COIN  
+
+function coin(geschlecht) {
+  const coinContainer = document.createElement("div");
+  coinContainer.classList.add("coin-container");
+
+  const coinBox = document.createElement("div");
+  coinBox.classList.add("coin-box");
+
+  const coin = document.createElement("div");
+  coin.classList.add("coin");
+
+  coinBox.appendChild(coin);
+  coinContainer.appendChild(coinBox);
+
+  const body = document.querySelector(".bigcontainer");
+  body.appendChild(coinContainer);
+
+  if (geschlecht === "man") {
+      coin.classList.add('male-background');
+  }
+}
+
+
 // MODUS   MODUS   MODUS   MODUS   MODUS   MODUS   MODUS   MODUS   MODUS   MODUS   
 
 function modus(){

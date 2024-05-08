@@ -45,6 +45,7 @@ function flirtFrau(){
 function flirtfff(){
   appendUserMessage("ich möchtest von einer anderer Frau geflirtert werden");
   setTimeout(coin, 0);
+  setTimeout(removeButtons, 200);
   setTimeout(function() {
       const coinContainer = document.querySelector(".coin-container");
       if (coinContainer) {
@@ -53,7 +54,6 @@ function flirtfff(){
   }, 3000);
   setTimeout (avatarFrau, 2900);
 
-  removeButtons();
   setTimeout (function(){showNextMessage("✨lesb✨", 1000);}, 3500);
   setTimeout (function(){showNextMessage("🫦", 1000);}, 5500);
   setTimeout (function(){showNextMessage("hahah so ist viel besser", 1000);}, 7500);
@@ -69,23 +69,6 @@ function flirtfff(){
 }
 
 
-function coin(){
-
-  const coinContainer = document.createElement("div");
-  coinContainer.classList.add("coin-container");
-  
-  const coinBox = document.createElement("div");
-  coinBox.classList.add("coin-box");
-  
-  const coin = document.createElement("div");
-  coin.classList.add("coin");
-  
-  coinBox.appendChild(coin);
-  coinContainer.appendChild(coinBox);
-  
-  const body = document.querySelector(".bigcontainer");
-  body.appendChild(coinContainer);
-}
 
 
 function fffBot() {

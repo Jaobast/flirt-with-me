@@ -40,11 +40,20 @@ const ffm_array_01 = [
     }
   
   function flirtffm(){
-    setTimeout ( avatarFrau(), 500);
       appendUserMessage("ich möchtest von einer Frau geflirtert werden");
-      removeButtons();
-      setTimeout (function(){showNextMessage("🫦", 1000);}, 500);
-      setTimeout (function(){showNextMessage("hahah so ist viel besser", 1000);}, 2000);
+
+      setTimeout(coin, 0);
+      setTimeout(removeButtons, 200);
+      setTimeout(function() {
+          const coinContainer = document.querySelector(".coin-container");
+          if (coinContainer) {
+              coinContainer.remove();
+          }
+      }, 3000);
+      setTimeout (avatarFrau, 2900);
+
+      setTimeout (function(){showNextMessage("🫦", 1000);}, 3500);
+      setTimeout (function(){showNextMessage("hahah so ist viel besser", 1000);}, 5500);
       setTimeout(function() {
           const div = document.querySelector(".user-input");
           const btnFlirt = document.createElement("button");
@@ -53,7 +62,7 @@ const ffm_array_01 = [
           btnFlirt.classList.add("ffm");
   
           btnFlirt.addEventListener("click", ffmBot);
-      }, 4000);
+      }, 7500);
   }
   
   

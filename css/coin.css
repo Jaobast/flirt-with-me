@@ -1,7 +1,7 @@
 :root {
-    --face: #e0e0e070;
+    --face: dodgerblue;
     --lowlight: #111;
-    --side: #e8e8e8;
+    --side: salmon;
     --side-dark: #120e08;
     --coin-size: 10vh;
     --coin-face: url('../img/memoji-woman.png');
@@ -15,9 +15,6 @@
     height: 100vh;
     width: 100vw;
     position: absolute;
-/*     background-color: rgba(30, 143, 255, 0.599);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px); */
     z-index: 5;
     top: 0;
     left: 0;
@@ -37,7 +34,7 @@
 .coin-box{
     position: absolute;
     transform: translate(-50%,-50%);
-    top: 100%;
+    top: 80%;
     left: 50%;
     animation: move 3s linear forwards;
 }
@@ -53,27 +50,28 @@
     background-image: var(--coin-face);
     background-size: 100% 100%;
     background-position: center;
-    background-blend-mode: overlay;
-    filter:hue-rotate(-40deg) brightness(0.75) contrast(115%);
     animation-delay: -0.25s;
 
     animation: rotate 1s linear 2 forwards;
 }
 
+.coin.male-background::before {
+  background-image: url('../img/memoji-man.png')!important;
+}
 
   @keyframes move{
-    0%{ transform: scale(1) translate(10%, 100%);}
-    20%{ transform: scale(3) translate(-15%, -200%);}
-    80%{ transform: scale(3) translate(-15%, -200%);}
-    95%{ transform: scale(2) translate(-25%, -300%);}
-    100%{ transform: scale(1) translate(-230%, -900%);}
+    0%{ transform: scale(0.1) translate(-70%, 100%);}
+    20%{ transform: scale(3) translate(-15%, -130%);}
+    80%{ transform: scale(3) translate(-15%, -130%);}
+    95%{ transform: scale(2) translate(-20%, -150%);}
+    100%{ transform: scale(1) translate(-230%, -715%);}
 }
 
 @keyframes blurAnimation {
     40%, 95% {
         backdrop-filter: blur(30px);
         -webkit-backdrop-filter: blur(30px);
-        background-color: rgba(0, 0, 0, 0.599);
+        background-color: rgba(0, 0, 0, 0.7);
     }
 
     100%, 0% {

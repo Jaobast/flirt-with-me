@@ -15,12 +15,21 @@ const mfm_array_01 = [
   ];
 
 function flirtmfm(){
-  setTimeout ( avatarMann(), 500);
     appendUserMessage("ich möchtest von einem anderen Mann geflirtert werden");
-    removeButtons();
-    setTimeout (function(){showNextMessage("✨fagot✨ 💅🏼", 1000);}, 500);
-    setTimeout (function(){showNextMessage("Grindr feelings", 1000);}, 2000);
-    setTimeout (function(){showNextMessage("heheh", 1000);}, 4000);
+
+    setTimeout(coin("man"), 0);
+    setTimeout(removeButtons, 200);
+    setTimeout(function() {
+        const coinContainer = document.querySelector(".coin-container");
+        if (coinContainer) {
+            coinContainer.remove();
+        }
+    }, 3000);
+    setTimeout (avatarMann, 2900);
+
+    setTimeout (function(){showNextMessage("✨fagot✨ 💅🏼", 1000);}, 3500);
+    setTimeout (function(){showNextMessage("Grindr feelings", 1000);}, 5500);
+    setTimeout (function(){showNextMessage("heheh", 1000);}, 7500);
     setTimeout(function() {
         const div = document.querySelector(".user-input");
         const btnFlirt = document.createElement("button");
@@ -29,7 +38,7 @@ function flirtmfm(){
         btnFlirt.classList.add("mfm");
 
         btnFlirt.addEventListener("click", mfmBot);
-    }, 6000);
+    }, 9500);
 }
 
 
