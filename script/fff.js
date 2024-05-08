@@ -46,6 +46,30 @@ function flirtfff(){
   setTimeout ( avatarFrau(), 500);
 
   appendUserMessage("ich möchtest von einer anderer Frau geflirtert werden");
+  setTimeout(coin, 500);
+  setTimeout(function() {
+      const coinContainer = document.querySelector(".coin-container");
+      if (coinContainer) {
+          coinContainer.remove();
+      }
+  }, 6500);
+  setTimeout (function(){
+
+    const coinContainer = document.createElement("div");
+    coinContainer.classList.remove("coin-container");
+    
+    const coinBox = document.createElement("div");
+    coinBox.classList.remove("coin-box");
+    
+    const coin = document.createElement("div");
+    coin.classList.remove("coin", "coin2"); // Adicionando classes "coin" e "coin2"
+    
+    coinBox.appendChild(coin);
+    coinContainer.appendChild(coinBox);
+    
+    const body = document.querySelector(".bigcontainer"); // Corrigindo a classe para ".bigcontainer"
+    body.appendChild(coinContainer);
+  }, 6500);
   removeButtons();
   setTimeout (function(){showNextMessage("✨lesb✨", 1000);}, 500);
   setTimeout (function(){showNextMessage("🫦", 1000);}, 2500);
@@ -59,6 +83,25 @@ function flirtfff(){
 
       btnFlirt.addEventListener("click", fffBot);
   }, 6500);
+}
+
+
+function coin(){
+
+  const coinContainer = document.createElement("div");
+  coinContainer.classList.add("coin-container");
+  
+  const coinBox = document.createElement("div");
+  coinBox.classList.add("coin-box");
+  
+  const coin = document.createElement("div");
+  coin.classList.add("coin", "coin2"); // Adicionando classes "coin" e "coin2"
+  
+  coinBox.appendChild(coin);
+  coinContainer.appendChild(coinBox);
+  
+  const body = document.querySelector(".bigcontainer"); // Corrigindo a classe para ".bigcontainer"
+  body.appendChild(coinContainer);
 }
 
 
