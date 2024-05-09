@@ -1,6 +1,3 @@
-let flirtIndex = 0;
-let firstMessageIndex = 0;
-
 const fff_array_01 = [
   ["In deinen Augen sehe ich Sterne"],
   ["Tun dir nicht die Füße weh?"],
@@ -46,12 +43,6 @@ function flirtfff(){
   appendUserMessage("ich möchtest von einer anderer Frau geflirtert werden");
   setTimeout(coin, 0);
   setTimeout(removeButtons, 200);
-  setTimeout(function() {
-      const coinContainer = document.querySelector(".coin-container");
-      if (coinContainer) {
-          coinContainer.remove();
-      }
-  }, 3000);
   setTimeout (avatarFrau, 2900);
 
   setTimeout (function(){showNextMessage("✨lesb✨", 1000);}, 3500);
@@ -64,27 +55,6 @@ function flirtfff(){
       btnFlirt.innerHTML = "Flirt mit mir!";
       btnFlirt.classList.add("fff");
 
-      btnFlirt.addEventListener("click", fffBot);
+      btnFlirt.addEventListener("click", function() {bot("fff");});
   }, 9500);
-}
-
-
-
-
-function fffBot() {
-  appendUserMessage();
-  removeButtons();
-
-  if (flirtIndex < 2) {
-    setTimeout(function() {showNextMessage(fff_array_01[flirtIndex][0], 1500);}, 1000);
-    setTimeout(function() {showNextMessage(fff_array_02[flirtIndex][0], 2500);}, 3000);
-    setTimeout(function() {
-      document.querySelector(".fff").style.display = "inline";
-      flirtIndex++;
-      firstMessageIndex++;
-    }, 6500);
-  } else {
-    setTimeout(function() {showNextMessage("wie magst du den Flirt?", 1000);}, 1000);
-    modus();
-  }
 }

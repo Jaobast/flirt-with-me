@@ -1,4 +1,9 @@
+let flirtIndex = 0;
+let firstMessageIndex = 0;
+
 const chatContent = document.querySelector(".chat-content");
+
+// BOTMESSAGE  BOTMESSAGE  BOTMESSAGE  BOTMESSAGE  BOTMESSAGE  BOTMESSAGE  
 
 function appendBotMessage(messageText) {
   const messageDiv = document.createElement("div");
@@ -36,6 +41,9 @@ function showNextMessage(messageText, delay) {
   }, delay);
 }
 
+
+
+// BOTIMAGE  BOTIMAGE  BOTIMAGE  BOTIMAGE  BOTIMAGE  BOTIMAGE  
 
 function appendBotImg(link) {
   const messageDiv = document.createElement("div");
@@ -112,6 +120,28 @@ function removeButtons(){
       });
 }
 
+// BOT   BOT   BOT   BOT   BOT   BOT   BOT   BOT   BOT   BOT   BOT   BOT   BOT   BOT   BOT   
+
+function bot(caseName) {
+  appendUserMessage();
+  removeButtons();
+
+  if (flirtIndex < 2) {
+    setTimeout(function() { showNextMessage(eval(`${caseName}_array_01`)[flirtIndex][0], 1500); }, 1000);
+    setTimeout(function() { showNextMessage(eval(`${caseName}_array_02`)[flirtIndex][0], 2500); }, 3000);
+    
+      setTimeout(function() {
+          document.querySelector(`.${caseName}`).style.display = "inline";
+          flirtIndex++;
+          firstMessageIndex++;
+      }, 6500);
+  } else {
+      setTimeout(function() { showNextMessage("wie magst du den Flirt?", 1000); }, 1000);
+      modus();
+  }
+}
+
+
 // AVATAR   AVATAR   AVATAR   AVATAR   AVATAR   AVATAR   AVATAR   AVATAR   AVATAR   
 
 function avatarFrau(){
@@ -149,6 +179,12 @@ function coin(geschlecht) {
   if (geschlecht === "man") {
       coin.classList.add('male-background');
   }
+
+  setTimeout(function() {
+    if (coinContainer) {
+        coinContainer.remove();
+    }
+}, 3000);
 }
 
 

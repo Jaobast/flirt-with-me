@@ -19,12 +19,6 @@ function flirtmfm(){
 
     setTimeout(coin("man"), 0);
     setTimeout(removeButtons, 200);
-    setTimeout(function() {
-        const coinContainer = document.querySelector(".coin-container");
-        if (coinContainer) {
-            coinContainer.remove();
-        }
-    }, 3000);
     setTimeout (avatarMann, 2900);
 
     setTimeout (function(){showNextMessage("✨fagot✨ 💅🏼", 1000);}, 3500);
@@ -37,25 +31,6 @@ function flirtmfm(){
         btnFlirt.innerHTML = "Flirt mit mir!";
         btnFlirt.classList.add("mfm");
 
-        btnFlirt.addEventListener("click", mfmBot);
+        btnFlirt.addEventListener("click", function() {bot("mfm");});
     }, 9500);
-}
-
-
-function mfmBot(){
-  appendUserMessage();
-  removeButtons();
-
-  if (flirtIndex < 2) {
-    setTimeout(function() {showNextMessage(mfm_array_01[flirtIndex][0], 1500);}, 1000);
-    setTimeout(function() {showNextMessage(mfm_array_02[flirtIndex][0], 2500);}, 3000);
-    setTimeout(function() {
-      document.querySelector(".mfm").style.display = "inline";
-      flirtIndex++;
-      firstMessageIndex++;
-    }, 6500);
-  } else {
-    setTimeout(function() {showNextMessage("wie magst du den Flirt?", 1000);}, 1000);
-    modus();
-  }
 }
