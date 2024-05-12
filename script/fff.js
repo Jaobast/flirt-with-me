@@ -18,7 +18,7 @@ const fff_array_02 = [
 function flirtFrau(){
     appendUserMessage("ich bin weiblich");
     removeButtons();
-    setTimeout (function(){showNextMessage("😏", 1000);}, 500);
+    setTimeout (function(){showNextEmoji("😏", 1000);}, 500);
     setTimeout (function(){showNextMessage("und welches Geschlecht bevorzugst du für mich?", 1000);}, 2000);
 
     setTimeout(function() {
@@ -46,7 +46,7 @@ function flirtfff(){
   setTimeout (avatarFrau, 2900);
 
   setTimeout (function(){showNextMessage("✨lesb✨", 1000);}, 3500);
-  setTimeout (function(){showNextMessage("🫦", 1000);}, 5500);
+  setTimeout (function(){showNextEmoji("🫦", 1000);}, 5500);
   setTimeout (function(){showNextMessage("hahah so ist viel besser", 1000);}, 7500);
   setTimeout(function() {
       const div = document.querySelector(".user-input");

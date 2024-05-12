@@ -26,7 +26,7 @@ function noFlirt(){
   setTimeout (function(){showNextMessage("excuse me?", 500);}, 5500);
   setTimeout (function(){showNextMessage("ich frage nochmal", 1000);}, 7000);
   setTimeout (function(){showNextMessage("und du bekommst wieder zwei Auswahl", 1000);}, 9000);
-  setTimeout (function(){showNextMessage("😇", 500);}, 11000);
+  setTimeout (function(){showNextEmoji("😇", 500);}, 11000);
   setTimeout (function(){showNextMessage("Erlaubst du mir, mit dir zu flirten? 🙃", 2000);}, 12500);
   setTimeout (function(){
     const div = document.querySelector(".user-input");

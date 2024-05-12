@@ -73,6 +73,46 @@ function removeMessage(messageDiv) {
   messageDiv.remove();
 }
 
+
+// BOTEMOJI  BOTEMOJI  BOTEMOJI  BOTEMOJI  BOTEMOJI  BOTEMOJI  
+
+function appendBotEmoji(emoji) {
+  const messageDiv = document.createElement("div");
+  messageDiv.className = "message bot-message";
+
+  const contentDiv = document.createElement("div");
+  contentDiv.className = "message-content emoji";
+  contentDiv.textContent = emoji;
+  messageDiv.appendChild(contentDiv);
+
+  const body = document.body;
+  if (body.classList.contains("body-naughty")) {
+    messageDiv.classList.add("bot-naughty");
+  }else if(body.classList.contains("body-funny")){
+    messageDiv.classList.add("bot-funny");
+  }else if(body.classList.contains("body-romantic")){
+    messageDiv.classList.add("bot-romantic");
+  }
+
+  const botMessageDivs = document.querySelectorAll(".message-content");
+  if (botMessageDivs.length === 0 || botMessageDivs[0].childNodes[0] === messageDiv) {
+    contentDiv.classList.add("first");
+  }
+
+  chatContent.appendChild(messageDiv);
+
+  return messageDiv;
+}
+
+function showNextEmoji(emoji, delay) {
+  const messageDiv = appendBotMessage("...");
+  setTimeout(function() {
+    removeMessage(messageDiv);
+    appendBotEmoji(emoji); 
+  }, delay);
+}
+
+
 // USER   USER   USER   USER   USER   USER   USER   USER   USER   USER   USER   USER   
 
 function appendUserMessage(message) {

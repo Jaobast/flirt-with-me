@@ -99,6 +99,10 @@ body{
     margin-top: 16vh;
 }
 
+.emoji{
+    font-size: 80px!important;
+    padding: 10px 30px!important;
+}
 
 .user-message{
     margin: 12px 0;

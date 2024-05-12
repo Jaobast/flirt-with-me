@@ -18,7 +18,7 @@ const ffm_array_01 = [
   function flirtMann(){
       appendUserMessage("ich bin männlich");
       removeButtons();
-      setTimeout (function(){showNextMessage("🙈", 1000);}, 500);
+      setTimeout (function(){sshowNextEmoji("🙈", 1000);}, 500);
       setTimeout (function(){showNextMessage("und welches Geschlecht bevorzugst du für mich?", 1000);}, 2000);
   
       setTimeout(function() {
@@ -46,7 +46,7 @@ const ffm_array_01 = [
       setTimeout(removeButtons, 200);
       setTimeout (avatarFrau, 2900);
 
-      setTimeout (function(){showNextMessage("🫦", 1000);}, 3500);
+      setTimeout (function(){showNextEmoji("🫦", 1000);}, 3500);
       setTimeout (function(){showNextMessage("hahah so ist viel besser", 1000);}, 5500);
       setTimeout(function() {
           const div = document.querySelector(".user-input");

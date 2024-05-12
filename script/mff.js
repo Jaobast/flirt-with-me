@@ -21,7 +21,7 @@ function flirtmff(){
     setTimeout(removeButtons, 200);
     setTimeout (avatarMann, 2900);
 
-    setTimeout (function(){showNextMessage("🍆💦", 1000);}, 3500);
+    setTimeout (function(){showNextEmoji("🍆💦", 1000);}, 3500);
     setTimeout (function(){showNextMessage("send nudes hehe", 1000);}, 5500);
     setTimeout (function(){showNextMessage("spaß 🌿👀🌿", 1000);}, 7500);
     setTimeout(function() {
