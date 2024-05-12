@@ -1,3 +1,13 @@
+@font-face {
+    font-family: 'Ubuntu';
+    src: url(../font/Ubuntu-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Ubuntu-Light';
+    src: url(../font/Ubuntu-Light.ttf);
+}
+
 html{
     height: -webkit-fill-available;
     max-height: 100vh;
@@ -26,12 +36,12 @@ body{
     -webkit-backdrop-filter: blur(35px);
 }
 
-
-
 .h2{
     color: salmon;
     margin:0;
     font-size: 60px;
+    font-family: 'Ubuntu';
+    text-transform: lowercase;
 }
 
 .avatar-area{
@@ -47,6 +57,7 @@ body{
     margin-top: 10px;
     margin-bottom: 0px;
     color: dodgerblue;
+    font-family: 'Ubuntu-Light';
 }
 
 .avatar, .avatar-container{
@@ -82,17 +93,17 @@ body{
 }
   
 .message{
-    margin: 12px 0;
+    margin: 8px 0;
     display: flex;
     align-items: flex-end;
-    transform: translateZ(0);
+    font-size: 20px;
 }
   
 .bot-message .message-content {
     max-width: 70%;
-    padding: 12px 16px;
+    padding: 20px 25px 25px 30px;
     background-color: rgb(255, 230, 227);
-    border-radius: 16px;
+    border-radius: 30px;
 }
 
 .first {
@@ -105,7 +116,7 @@ body{
 }
 
 .user-message{
-    margin: 12px 0;
+    margin: 8px 0;
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
@@ -113,10 +124,10 @@ body{
   
 .user-message .message-content {
     max-width: 70%;
-    padding: 12px 16px;
+    padding: 20px 25px 25px 30px;
     background-color: dodgerblue;
     color: white;
-    border-radius: 16px;
+    border-radius: 30px;
 }
   
 .user-input{
@@ -138,5 +149,5 @@ button{
 }
 
 .img-content img{
-    border-radius: 20px;
+    border-radius: 30px;
 }
